@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>קורס AI לקולנוע ואנימציה - מחזור 5</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap');
+        
+        :root {
+            --instagram-purple: #C13584;
+            --instagram-blue: #405DE6;
+            --instagram-red: #FD1D1D;
+            --instagram-orange: #F77737;
+            --instagram-yellow: #FCAF45;
+            --instagram-green: #4DC247;
+        }
+        
+        body {
+            font-family: 'Heebo', sans-serif;
+            background: linear-gradient(45deg, var(--instagram-purple), var(--instagram-blue));
+            color: #ffffff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(to right, var(--instagram-yellow), var(--instagram-orange), var(--instagram-red));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            color: var(--instagram-yellow);
+            border-bottom: 2px solid var(--instagram-orange);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        .card h2 i {
+            margin-left: 0.5rem;
+            font-size: 1.5em;
+        }
+        .schedule {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .schedule-item {
+            background: linear-gradient(135deg, var(--instagram-blue), var(--instagram-purple));
+            border-radius: 12px;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        .schedule-item:hover {
+            transform: scale(1.05);
+        }
+        .schedule-item i {
+            font-size: 1.5rem;
+            margin-left: 1rem;
+            color: var(--instagram-yellow);
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .link-btn {
+            background: linear-gradient(45deg, var(--instagram-orange), var(--instagram-red));
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .link-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .link-btn i {
+            margin-left: 0.5rem;
+        }
+        
+        /* Custom Instagram-inspired elements */
+        .instagram-border {
+            position: relative;
+            padding: 3px;
+            background: linear-gradient(45deg, var(--instagram-yellow), var(--instagram-orange), var(--instagram-red), var(--instagram-purple));
+            border-radius: 18px;
+        }
+        .instagram-border::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            z-index: -1;
+        }
+        .insta-stories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .story {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            background: linear-gradient(45deg, var(--instagram-yellow), var(--instagram-orange), var(--instagram-red), var(--instagram-purple));
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .story:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .insta-stories {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>קורס AI לקולנוע ואנימציה - מחזור 5</h1>
+        
+        <div class="insta-stories">
+            <div class="story" title="שיעורים"><i class="fas fa-chalkboard-teacher"></i></div>
+            <div class="story" title="תרגולים"><i class="fas fa-laptop-code"></i></div>
+            <div class="story" title="קישורים"><i class="fas fa-link"></i></div>
+            <div class="story" title="הרצאה מיוחדת"><i class="fas fa-star"></i></div>
+        </div>
+        
+        <div class="instagram-border">
+            <div class="card">
+                <h2><i class="fas fa-chalkboard-teacher"></i> שיעורים</h2>
+                <div class="schedule">
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>שיעור 1:</strong> יום שני 19.8, 18:00-21:00
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>שיעור 2:</strong> יום שני 26.8, 18:00-21:00
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>שיעור 3:</strong> יום שני 2.9, 18:00-21:00
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>שיעור 4:</strong> יום שני 9.9, 18:00-21:00
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>שיעור 5:</strong> יום שני 16.9, 18:00-21:00
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>שיעור 6:</strong> יום שני 23.9, 18:00-21:00
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>שיעור 7:</strong> יום שני 30.9, 18:00-21:00
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instagram-border">
+            <div class="card">
+                <h2><i class="fas fa-laptop-code"></i> מפגשי תרגול</h2>
+                <div class="schedule">
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>תרגול 1:</strong> יום שישי 23.8, 10:00-11:30
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>תרגול 2:</strong> יום רביעי 28.8, 18:00-19:30
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>תרגול 3:</strong> יום רביעי 4.9, 18:00-19:30
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>תרגול 4:</strong> יום שישי 13.9, 10:00-11:30
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>תרגול 5:</strong> יום שישי 20.9, 10:00-11:30
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>תרגול 6:</strong> יום רביעי 25.9, 18:00-19:30
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instagram-border">
+            <div class="card">
+                <h2><i class="fas fa-link"></i> קישורים חשובים</h2>
+                <div class="links">
+                    <a href="https://us06web.zoom.us/j/83308948094?pwd=7oe6LbShScsWXr9cVTL8PF217eTKqa.1" class="link-btn" target="_blank">
+                        <i class="fas fa-video"></i> לינק זום לשיעורים
+                    </a>
+                    <a href="https://us02web.zoom.us/j/2409675014?pwd=ZzlCeFFSMEJUYTBKeDgrT05oT2lQdz09" class="link-btn" target="_blank">
+                        <i class="fas fa-laptop"></i> לינק זום למפגשי תרגול
+                    </a>
+                    <a href="https://chat.whatsapp.com/F2Be6u6b2p73NNbPGyyf1H" class="link-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> קבוצת WhatsApp שקטה
+                    </a>
+                    <a href="https://chat.whatsapp.com/CR3QxSRgmjMLn4e1xWtNtL" class="link-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> קבוצת WhatsApp לשאלות
+                    </a>
+                    <a href="https://www.facebook.com/groups/709344077491675" class="link-btn" target="_blank">
+                        <i class="fab fa-facebook"></i> קבוצת Facebook לקורס קולנוע ואנימציה
+                    </a>
+                    <a href="https://www.facebook.com/groups/9142713925800002" class="link-btn" target="_blank">
+                        <i class="fab fa-facebook"></i> קבוצת Facebook לקורס מידג'רני
+                    </a>
+                    <a href="https://forms.gle/ctoy4BXVHuxqyHKQ9" class="link-btn" target="_blank">
+                        <i class="fas fa-clipboard-list"></i> שאלון היכרות
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="instagram-border">
+            <div class="card">
+                <h2><i class="fas fa-microphone"></i> הרצאה מיוחדת</h2>
+                <div class="schedule">
+                    <div class="schedule-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <div>
+                            <strong>הרצאה של מתן כהן גרומי:</strong> 18.9, 19:00 - 20:30
+                        </div>
+                    </div>
+                </div>
+                <div class="links">
+                    
